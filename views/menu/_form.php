@@ -28,6 +28,8 @@ $this->registerJs($this->render('_script.js'));
             <?= $form->field($model, 'parent_name')->textInput(['id' => 'parent_name']) ?>
 
             <?= $form->field($model, 'route')->textInput(['id' => 'route']) ?>
+            <?= $form->field($model, 'icon')->textInput(['id' => 'icon']) ?>
+            <?= $form->field($model, 'module')->textInput(['id' => 'module']) ?>
         </div>
         <div class="col-sm-6">
             <?= $form->field($model, 'order')->input('number') ?>
