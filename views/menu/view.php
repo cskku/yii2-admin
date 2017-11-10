@@ -35,6 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'route',
             'order',
+            'icon',
+            'module',
         ],
     ])
     ?>
