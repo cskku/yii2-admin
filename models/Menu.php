@@ -63,7 +63,9 @@ class Menu extends \yii\db\ActiveRecord
             [['order'], 'integer'],
             [['route'], 'in',
                 'range' => static::getSavedRoutes(),
-                'message' => 'Route "{value}" not found.']
+                'message' => 'Route "{value}" not found.'],
+            [['icon'], 'string', 'max' => 50],
+            [['module'], 'string', 'max' => 50],
         ];
     }
 
@@ -99,6 +101,8 @@ class Menu extends \yii\db\ActiveRecord
             'route' => Yii::t('rbac-admin', 'Route'),
             'order' => Yii::t('rbac-admin', 'Order'),
             'data' => Yii::t('rbac-admin', 'Data'),
+            'icon' => Yii::t('rbac-admin', 'icon'),
+            'module' => Yii::t('rbac-admin', 'module'),
         ];
     }
 
@@ -142,7 +146,7 @@ class Menu extends \yii\db\ActiveRecord
     {
         $tableName = static::tableName();
         return (new \yii\db\Query())
-                ->select(['m.id', 'm.name', 'm.route', 'parent_name' => 'p.name'])
+                ->select(['m.id', 'm.name','m.icon','m.module', 'm.route', 'parent_name' => 'p.name'])
                 ->from(['m' => $tableName])
                 ->leftJoin(['p' => $tableName], '[[m.parent]]=[[p.id]]')
                 ->all(static::getDb());
