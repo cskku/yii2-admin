@@ -27,6 +27,14 @@ $this->params['nav-items'] = $menus;
                 ]);
             }
             ?>
+               <a class="list-group-item" href="<?= Yii::getAlias('@web') ?>/personsystem/assign/assign-student">
+                <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                <span><?= yii::t('app','Assignment Student') ?></span>
+            </a>
+            <a class="list-group-item" href="<?= Yii::getAlias('@web') ?>/personsystem/assign/revoke-student">
+                <i class="glyphicon glyphicon-chevron-right pull-right"></i>
+                <span><?= yii::t('app','Revoke Student') ?></span>
+            </a>
         </div>
     </div>
     <div class="col-sm-9">
